@@ -1,0 +1,26 @@
+{
+  "name": "windstream",
+  "version": "1.0.0",
+  "description": "windstream theme, generated from starterkit_theme. Additional information on generating themes can be found in the [Starterkit documentation](https://www.drupal.org/docs/core-modules-and-themes/core-themes/starterkit-theme).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danny-englander/windstream-theme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danny-englander/windstream-theme/issues"
+  },
+  "homepage": "https://github.com/danny-englander/windstream-theme#readme",
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.8",
+    "tailwindcss": "^4.1.8"
+  },
+  "devDependencies": {
+    "vite-plugin-full-reload": "^1.2.0"
+  }
+}
