@@ -1,31 +1,41 @@
-import { defineConfig } from 'vite';
-import tailwindcssVite from '@tailwindcss/vite';
+import { defineConfig } from "vite";
+import tailwindcssVite from "@tailwindcss/vite";
 
 export default defineConfig({
-  root: '.', // Project root: theme directory
+  // Project root: theme directory.
+  root: ".",
   plugins: [
     tailwindcssVite(),
+    FullReload(["./templates/**/*.html.twig", "./components/**/*.twig"]),
   ],
   server: {
-    host: '0.0.0.0', // Make server accessible from host machine (DDEV)
-    port: 12345,      // You can change this port if you want
-    strictPort: true, // Fail if port is taken, instead of incrementing
+    // Make server accessible from host machine (DDEV).
+    host: "0.0.0.0",
+    // You can change this port if you want.
+    port: 3308,
+    // Fail if port is taken, instead of incrementing.
+    strictPort: true,
     hmr: {
-      host: 'd11.ddev.site', // Your DDEV site hostname
-      port: 12345,
-      protocol: 'ws',
+      // Your DDEV site hostname.
+      host: "d11.ddev.site",
+      port: 3308,
+      protocol: "ws",
     },
     watch: {
-      usePolling: true, // Needed in many Docker environments
+      // Needed in many Docker environments.
+      usePolling: true,
     },
   },
   build: {
-    outDir: 'dist',      // Output directory for production build
-    emptyOutDir: true,   // Clean outDir on build
+    // Output directory for production build.
+    outDir: "dist",
+    // Clean outDir on build.
+    emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: './src/tailwind.css', // Your main entry CSS
-        // add other entries here if you have more, e.g. './src/main.js'
+        // Your main entry CSS.
+        main: "./src/tailwind.css",
+        // Add other entries here if you have more, e.g. './src/main.js'.
       },
     },
   },
